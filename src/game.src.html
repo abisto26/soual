@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>سؤال خفيف ضريف مع Abisto</title>
+<meta name="description" content="أسئلة خفيفة وضريفة من الفيديوهات ديال Abisto. 15 ثانية لكل سؤال: واش تقدر تجاوب؟">
+<meta name="theme-color" content="#3E7FC8">
+<meta property="og:title" content="سؤال خفيف ضريف مع Abisto">
+<meta property="og:description" content="15 ثانية لكل سؤال: واش تقدر تجاوب؟">
+<meta property="og:image" content="https://abisto26.com/sual/icons/icon-512.png">
+<meta property="og:url" content="https://abisto26.com/sual/">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" href="icons/favicon.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="سؤال خفيف">
+<style>
+@font-face{font-family:"Lalezar";font-weight:400;font-display:swap;src:url(assets/fonts/lalezar-arabic-400-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Lalezar";font-weight:400;font-display:swap;src:url(assets/fonts/lalezar-latin-400-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:"Tajawal";font-weight:500;font-display:swap;src:url(assets/fonts/tajawal-arabic-500-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Tajawal";font-weight:500;font-display:swap;src:url(assets/fonts/tajawal-latin-500-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F}
+@font-face{font-family:"Tajawal";font-weight:800;font-display:swap;src:url(assets/fonts/tajawal-arabic-800-normal.woff2) format("woff2");unicode-range:U+0600-06FF,U+0750-077F,U+0870-088E,U+0890-0891,U+0897-08E1,U+08E3-08FF,U+200C-200E,U+2010-2011,U+204F,U+2E41,U+FB50-FDFF,U+FE70-FE74,U+FE76-FEFC}
+@font-face{font-family:"Tajawal";font-weight:800;font-display:swap;src:url(assets/fonts/tajawal-latin-800-normal.woff2) format("woff2");unicode-range:U+0000-00FF,U+2000-206F}
+:root{
+  --navy:#13267A; --navy2:#1B3A9A; --ink:#10206E; --soft:#3A4C8F;
+  --yellow:#FFD21F; --orange:#F4561C; --red:#E0262B; --green:#1E9E5A; --card:#FFFFFF;
+  --sky1:#3E7FC8; --sky2:#6AAEE3; --warm1:#F7C9A8; --warm2:#FDE3B0;
+  --display:"Lalezar","Tajawal","Segoe UI",Tahoma,sans-serif;
+  --text:"Tajawal","Segoe UI",Tahoma,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+/* the sunburst sky stays put behind everything, so long screens never show a seam */
+html{min-height:100%;background:var(--warm2)}
+/* a fixed layer (iPhones ignore fixed backgrounds) */
+html::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:repeating-conic-gradient(from 0deg at 50% 26%, rgba(255,255,255,.13) 0deg 7deg, rgba(255,255,255,0) 7deg 20deg),
+    radial-gradient(ellipse 85% 55% at 50% 34%, rgba(255,246,214,.95) 0%, rgba(255,246,214,0) 62%),
+    linear-gradient(180deg,var(--sky1) 0%,var(--sky2) 32%,var(--warm1) 72%,var(--warm2) 100%)}
+body{margin:0;min-height:100vh;min-height:100dvh;color:var(--ink);font-family:var(--text);font-weight:500;
+  display:flex;flex-direction:column;align-items:center;overflow-x:hidden;-webkit-tap-highlight-color:transparent;
+  padding:calc(env(safe-area-inset-top,0px) + 12px) max(16px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 22px) max(16px,env(safe-area-inset-left,0px))}
+button{font:inherit}
+.screen{width:100%;max-width:560px;display:none;flex-direction:column;align-items:center;gap:20px;flex:1}
+.screen.on{display:flex;animation:in .35s ease}
+@keyframes in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.logo{width:min(320px,78vw)}
+.logo.small{width:min(132px,34vw);flex:none}
+.logo img{width:100%;height:auto;display:block;filter:drop-shadow(0 10px 18px rgba(19,38,122,.35))}
+.pitch{background:var(--card);border:4px solid var(--navy2);border-radius:24px;padding:14px 18px;text-align:center;box-shadow:0 7px 0 var(--navy)}
+.pitch b{display:block;font-family:var(--display);font-weight:400;font-size:28px;line-height:1.3}
+.pitch span{display:block;margin-top:4px;font-size:16px;font-weight:800;color:var(--soft)}
+.btn{font-family:var(--display);font-weight:400;font-size:clamp(28px,7.5vw,36px);line-height:1.2;
+  color:var(--navy);background:linear-gradient(#FFE75C,#FFB800);border:4px solid var(--navy2);border-radius:999px;
+  padding:12px 44px 8px;cursor:pointer;box-shadow:0 7px 0 var(--navy);transition:transform .08s,box-shadow .08s;touch-action:manipulation}
+.btn:active{transform:translateY(6px);box-shadow:0 1px 0 var(--navy)}
+.btn.ghost{font-size:22px;padding:9px 26px 6px;background:#fff}
+.btn.small{font-size:24px;padding:9px 28px 6px;box-shadow:0 5px 0 var(--navy)}
+.btn:focus-visible,.judge button:focus-visible,.mode:focus-visible,.iconbtn:focus-visible{outline:4px solid #fff;outline-offset:4px}
+.btn[hidden]{display:none}
+.modes{width:100%;display:flex;flex-direction:column;gap:14px}
+.mode{display:grid;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:14px;align-items:center;text-align:right;width:100%;color:var(--ink);
+  background:linear-gradient(#FFE75C,#FFB800);border:4px solid var(--navy2);border-radius:24px;padding:12px 16px;cursor:pointer;box-shadow:0 7px 0 var(--navy);transition:transform .08s,box-shadow .08s;touch-action:manipulation}
+.mode.host{background:#fff}
+.mode:active{transform:translateY(6px);box-shadow:0 1px 0 var(--navy)}
+.m-ico{grid-row:1 / span 2;font-size:40px;line-height:1}
+.m-t{font-family:var(--display);font-size:clamp(24px,6.5vw,30px);line-height:1.25;color:var(--navy)}
+.m-s{font-size:15px;font-weight:800;color:var(--soft)}
+/* small round buttons: sound and start over */
+.iconbtn{flex:none;width:48px;height:48px;border-radius:50%;border:3px solid var(--navy2);background:#fff;color:var(--navy);display:grid;place-items:center;
+  font-size:22px;line-height:1;cursor:pointer;box-shadow:0 4px 0 var(--navy);touch-action:manipulation;padding:0}
+.iconbtn:active{transform:translateY(3px);box-shadow:0 1px 0 var(--navy)}
+.iconbtn svg{width:24px;height:24px}
+.corner{position:absolute;top:calc(env(safe-area-inset-top,0px) + 12px);left:max(16px,env(safe-area-inset-left,0px))}
+.top{width:100%;display:flex;align-items:center;gap:10px}
+.top .dots{flex:1;min-width:0;flex-wrap:nowrap}
+.top .logo.small{width:min(110px,28vw)}
+.top .btns{display:flex;flex-direction:column;gap:10px}
+.dots{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}
+.dots i{width:12px;height:12px;flex:none;border-radius:50%;background:rgba(255,255,255,.6);border:2px solid var(--navy2)}
+.dots i.ok{background:var(--green);border-color:var(--green)}
+.dots i.no{background:var(--red);border-color:var(--red)}
+.dots i.cur{background:var(--yellow);transform:scale(1.2)}
+.card{width:100%;background:var(--card);border:4px solid var(--navy2);border-radius:26px;padding:16px 18px 20px;text-align:center;box-shadow:0 8px 0 var(--navy),0 18px 30px rgba(19,38,122,.25)}
+.num{margin:0 0 6px;font-size:15px;font-weight:800;color:var(--soft)}
+.timer{position:relative;width:80px;height:80px;margin:0 auto 10px}
+.timer svg{width:100%;height:100%;transform:rotate(-90deg)}
+.timer .track{fill:none;stroke:#E3E8F7;stroke-width:9}
+.timer .ring{fill:none;stroke:var(--navy2);stroke-width:9;stroke-linecap:round;stroke-dasharray:276.46;stroke-dashoffset:0;transition:stroke .3s}
+.timer span{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--display);font-size:34px;line-height:1;padding-top:6px;color:var(--navy)}
+.timer.warn .ring{stroke:var(--red)} .timer.warn span{color:var(--red);animation:beat 1s infinite}
+.timer.done span{font-size:15px;padding-top:2px;color:var(--red);animation:none}
+@keyframes beat{50%{transform:scale(1.15)}}
+.q{font-family:var(--display);font-weight:400;font-size:clamp(28px,7.4vw,44px);line-height:1.4;margin:0;overflow-wrap:anywhere}
+.reveal{margin-top:16px;display:none}
+.reveal.on{display:block;animation:in .3s ease}
+.reveal .lbl{font-size:14px;font-weight:800;color:var(--soft)}
+body.host .reveal .lbl{color:var(--orange)}
+.reveal .ans{font-family:var(--display);font-weight:400;font-size:clamp(26px,7vw,38px);color:var(--orange);line-height:1.35}
+.late{margin:12px 0 0;font-size:17px;font-weight:800;color:var(--red)}
+.late[hidden]{display:none}
+.judge{display:none;gap:10px;width:100%}
+.judge.on{display:flex}
+.judge button{flex:1;font-family:var(--display);font-weight:400;font-size:24px;padding:12px 8px 8px;border-radius:18px;border:4px solid var(--navy2);cursor:pointer;color:#fff;box-shadow:0 6px 0 var(--navy);touch-action:manipulation}
+.judge button:active{transform:translateY(5px);box-shadow:0 1px 0 var(--navy)}
+.judge .ok{background:var(--green)} .judge .no{background:var(--red)}
+.score{font-family:var(--display);font-size:clamp(70px,22vw,110px);line-height:1;margin:4px 0 0}
+.score small{font-size:.45em;color:var(--soft)}
+.verdict{font-family:var(--display);font-size:28px;line-height:1.3;margin:6px 0 0;color:var(--orange)}
+.sub{margin:6px 0 0;font-size:16px;font-weight:800;color:var(--soft)}
+.medal{width:100%;text-align:center;background:#fff;border:4px dashed #B9C3E6;border-radius:24px;padding:14px 16px 16px}
+.medal[hidden]{display:none}
+.medal.won{border:4px solid #E7A500;background:linear-gradient(#FFF8D6,#FFE79A);box-shadow:0 7px 0 #B86A00}
+.medal-ico{font-size:72px;line-height:1;filter:grayscale(1) opacity(.35)}
+.medal.won .medal-ico{filter:none}
+.medal.won.go .medal-ico{animation:drop .9s cubic-bezier(.2,1.5,.4,1) both, swing 2.4s ease-in-out .9s infinite;transform-origin:50% 0}
+@keyframes drop{from{transform:translateY(-140px) scale(.4);opacity:0}to{transform:none;opacity:1}}
+@keyframes swing{0%,100%{transform:rotate(0)}25%{transform:rotate(8deg)}75%{transform:rotate(-8deg)}}
+.medal-t{margin:8px 0 0;font-family:var(--display);font-size:26px;line-height:1.3}
+.medal.won .medal-t{color:#8A4B00}
+.medal-s{margin:2px 0 0;font-size:15px;font-weight:800;color:var(--soft)}
+.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+/* confetti falls behind the cards, so the score stays readable */
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:0}
+.screen{position:relative;z-index:1}
+.confetti i{position:absolute;top:-20px;width:9px;height:14px;border-radius:2px;animation:fall linear forwards}
+@keyframes fall{to{top:110%;transform:rotate(720deg)}}
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);transform:translate(-50%,20px);opacity:0;pointer-events:none;z-index:50;background:var(--navy);color:#fff;font-weight:800;padding:10px 18px;border-radius:999px;transition:.2s;max-width:calc(100% - 32px);text-align:center}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.sheet{position:fixed;inset:0;z-index:40;background:rgba(16,32,110,.45);display:flex;align-items:center;justify-content:center;padding:20px}
+.sheet[hidden]{display:none}
+.pop{width:100%;max-width:340px;background:#fff;border:4px solid var(--navy2);border-radius:26px;padding:18px 16px 20px;text-align:center;box-shadow:0 8px 0 var(--navy);animation:pop .3s cubic-bezier(.2,1.4,.4,1)}
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+.pop-emoji{font-size:52px;line-height:1;animation:wig 1.2s ease-in-out infinite}
+@keyframes wig{0%,100%{transform:rotate(0)}25%{transform:rotate(-10deg)}75%{transform:rotate(10deg)}}
+.pop-t{font-family:var(--display);font-size:30px;margin:6px 0 0}
+.pop-s{margin:2px 0 14px;font-size:15px;font-weight:800;color:var(--soft)}
+.pop-row{display:flex;flex-direction:column;gap:12px;align-items:center}
+.linkish{font-size:15px;font-weight:800;color:var(--navy);background:none;border:none;text-decoration:underline;cursor:pointer;padding:4px}
+.foot{position:relative;z-index:1;width:100%;max-width:560px;margin-top:26px;display:flex;flex-direction:column;align-items:center;gap:10px}
+.foot-t{margin:0;font-family:var(--display);font-size:20px;color:var(--navy)}
+.socials{display:flex;gap:12px}
+.socials a{display:grid;place-items:center;width:50px;height:50px;color:var(--navy);background:#fff;border:3px solid var(--navy2);border-radius:50%;box-shadow:0 4px 0 var(--navy)}
+.socials a svg{width:24px;height:24px}
+.socials a:active{transform:translateY(3px);box-shadow:0 1px 0 var(--navy)}
+.socials a:focus-visible{outline:3px solid var(--orange);outline-offset:2px}
+.home{font-size:14px;font-weight:800;color:var(--navy);opacity:.75;text-decoration:none}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<section class="screen on" id="sStart">
+  <button class="iconbtn corner sndbtn" aria-label="الصوت"></button>
+  <div class="logo"><img src="assets/logo.webp" alt="سؤال خفيف ضريف مع Abisto" width="720" height="720"></div>
+  <div class="pitch">
+    <b>كيفاش بغيتي تلعب؟</b>
+    <span id="pitchSub"></span>
+  </div>
+  <div class="modes">
+    <button class="mode" id="modePlay">
+      <span class="m-ico" aria-hidden="true">🙋</span>
+      <span class="m-t">أنا اللي غنجاوب</span>
+      <span class="m-s">الجواب كيبان من بعد</span>
+    </button>
+    <button class="mode host" id="modeHost">
+      <span class="m-ico" aria-hidden="true">🎤</span>
+      <span class="m-t">أنا اللي غنسوّل صحابي</span>
+      <span class="m-s">الجواب كيبان ليك نتا من الأول</span>
+    </button>
+  </div>
+</section>
+
+<section class="screen" id="sPlay">
+  <div class="top">
+    <div class="logo small"><img src="assets/logo-sm.webp" alt="" width="360" height="360"></div>
+    <div class="dots" id="dots" aria-hidden="true"></div>
+    <div class="btns">
+      <button class="iconbtn" id="restartBtn" aria-label="عاود من الأول">↺</button>
+      <button class="iconbtn sndbtn" aria-label="الصوت"></button>
+    </div>
+  </div>
+  <div class="card" aria-live="polite">
+    <p class="num" id="num"></p>
+    <div class="timer" id="timer" role="timer"><svg viewBox="0 0 100 100" aria-hidden="true"><circle class="track" cx="50" cy="50" r="44"/><circle class="ring" id="ring" cx="50" cy="50" r="44"/></svg><span id="secs">15</span></div>
+    <p class="q" id="q"></p>
+    <div class="reveal" id="reveal"><div class="lbl" id="ansLbl">الجواب</div><div class="ans" id="ans"></div></div>
+    <p class="late" id="late" hidden>⏰ سالا الوقت! تحسبات غلط</p>
+  </div>
+  <button class="btn" id="showBtn">شوف الجواب</button>
+  <button class="btn" id="nextBtn" hidden>السؤال الجاي</button>
+  <div class="judge" id="judge">
+    <button class="ok" id="okBtn">✔ جاوبت صح</button>
+    <button class="no" id="noBtn">✗ غلطت</button>
+  </div>
+</section>
+
+<section class="screen" id="sEnd">
+  <div class="logo"><img src="assets/logo.webp" alt="سؤال خفيف ضريف مع Abisto" width="720" height="720"></div>
+  <div class="card">
+    <p class="sub" id="resLbl">النتيجة ديالك</p>
+    <p class="score"><span id="sc"></span><small> / <span id="tot"></span></small></p>
+    <p class="verdict" id="verdict"></p>
+  </div>
+  <div class="medal" id="medal" hidden>
+    <div class="medal-ico" aria-hidden="true">🏅</div>
+    <p class="medal-t" id="medalT"></p>
+    <p class="medal-s" id="medalS"></p>
+  </div>
+  <button class="btn" id="shareBtn">شارك النتيجة 🔥</button>
+  <div class="row"><button class="btn ghost" id="againBtn">↺ عاود</button><button class="btn ghost" id="homeEnd">🏠 البداية</button></div>
+</section>
+
+<footer class="foot">
+  <p class="foot-t">تابع Abisto</p>
+  <nav class="socials" aria-label="الحسابات ديال Abisto">
+__ICONS__
+  </nav>
+  <a class="home" href="/" dir="ltr">abisto26.com</a>
+</footer>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="pop" role="dialog" aria-modal="true" aria-labelledby="popT">
+    <div class="pop-emoji" aria-hidden="true">🙈</div>
+    <p class="pop-t" id="popT">نعاودو من الأول؟</p>
+    <p class="pop-s">غادي تبدا لعبة جديدة بأسئلة جداد</p>
+    <div class="pop-row">
+      <button class="btn small" id="yesRestart">إيه، نعاودو</button>
+      <button class="btn ghost small" id="noRestart">لا، نكمّل</button>
+      <button class="linkish" id="homeBtn">🏠 رجع للبداية</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="questions.js"></script>
+<script>
+const PER_GAME = 10, TOTAL_SEC = 15, CIRC = 276.46, GAME_URL = "https://abisto26.com/sual/";
+const $ = id => document.getElementById(id);
+const store = { get(k, d){ try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch(e){ return d; } },
+  set(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} } };
+let deck = [], i = 0, results = [], raf = null, endAt = 0, lastN = -1, actx = null, mode = "play";
+
+/* ---------- sound: off until the player turns it on ---------- */
+let soundOn = store.get("sual-sound", false);
+const SPK = '<path d="M4 9.5h3.6L12.5 5.6v12.8L7.6 14.5H4z" fill="currentColor"/>';
+function paintSound(){
+  document.querySelectorAll(".sndbtn").forEach(b => {
+    b.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true">${SPK}${soundOn ? '<path d="M15.6 9a4.2 4.2 0 0 1 0 6M18.2 6.6a8 8 0 0 1 0 10.8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>' : '<path d="M16 9.5l5 5M21 9.5l-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>'}</svg>`;
+    b.setAttribute("aria-pressed", soundOn); b.setAttribute("aria-label", soundOn ? "الصوت خدام" : "الصوت مطفي");
+  });
+}
+function ctx(){ if (!soundOn) return null; try { actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.state === "suspended") actx.resume(); } catch(e){ return null; } return actx; }
+function tone(f, d, type = "triangle", vol = .07){
+  const c = ctx(); if (!c) return;
+  try { const t0 = c.currentTime, o = c.createOscillator(), g = c.createGain(); o.type = type; o.frequency.value = f;
+    g.gain.setValueAtTime(vol, t0); g.gain.exponentialRampToValueAtTime(.0001, t0 + d); o.connect(g); g.connect(c.destination); o.start(t0); o.stop(t0 + d + .02); } catch(e){}
+}
+document.querySelectorAll(".sndbtn").forEach(b => b.addEventListener("click", () => {
+  soundOn = !soundOn; store.set("sual-sound", soundOn); paintSound(); if (soundOn) tone(880, .12);
+}));
+
+/* ---------- questions: 10 per game, no repeats until every question has been played ---------- */
+function shuffle(a){ a = a.slice(); for (let k = a.length - 1; k > 0; k--) { const r = Math.floor(Math.random() * (k + 1)); [a[k], a[r]] = [a[r], a[k]]; } return a; }
+function nextDeck(){
+  const n = Math.min(PER_GAME, QUESTIONS.length);
+  let seen = new Set(store.get("sual-seen", []).filter(q => QUESTIONS.some(x => x[0] === q)));
+  let fresh = QUESTIONS.filter(x => !seen.has(x[0]));
+  if (fresh.length < n){ // the round is over: start a new one, without the questions just played
+    const last = new Set(store.get("sual-last", []));
+    seen = new Set(); fresh = shuffle(fresh).concat(shuffle(QUESTIONS.filter(x => !fresh.includes(x) && !last.has(x[0]))), shuffle(QUESTIONS.filter(x => last.has(x[0]))));
+  } else fresh = shuffle(fresh);
+  const d = fresh.slice(0, n);
+  d.forEach(x => seen.add(x[0]));
+  store.set("sual-seen", [...seen]); store.set("sual-last", d.map(x => x[0]));
+  return d;
+}
+
+function show(id){ document.querySelectorAll(".screen").forEach(s => s.classList.toggle("on", s.id === id)); window.scrollTo(0, 0); }
+function dots(){
+  $("dots").innerHTML = deck.map((_, k) => `<i class="${k < results.length ? (results[k] ? "ok" : "no") : k === i ? "cur" : ""}"></i>`).join("");
+}
+function start(m){
+  if (m) mode = m;
+  document.body.classList.toggle("host", mode === "host");
+  deck = nextDeck(); i = 0; results = []; show("sPlay"); load();
+}
+function load(){
+  const [q, a] = deck[i];
+  $("num").textContent = "سؤال " + (i + 1) + " من " + deck.length;
+  $("q").textContent = q; $("ans").textContent = a;
+  $("late").hidden = true; $("nextBtn").hidden = true;
+  if (mode === "host"){
+    $("ansLbl").textContent = "الجواب (غير ليك 🤫)";
+    $("reveal").classList.add("on"); $("judge").classList.add("on"); $("showBtn").hidden = true;
+    $("okBtn").textContent = "✔ جاوب صح"; $("noBtn").textContent = "✗ غلط";
+  } else {
+    $("ansLbl").textContent = "الجواب";
+    $("reveal").classList.remove("on"); $("judge").classList.remove("on"); $("showBtn").hidden = false;
+    $("okBtn").textContent = "✔ جاوبت صح"; $("noBtn").textContent = "✗ غلطت";
+  }
+  dots(); startTimer();
+}
+function startTimer(){ cancelAnimationFrame(raf); $("timer").classList.remove("warn", "done"); endAt = performance.now() + TOTAL_SEC * 1000; lastN = -1; tick(); }
+function tick(){
+  const left = Math.max(0, endAt - performance.now()), n = Math.ceil(left / 1000), t = $("timer");
+  $("ring").style.strokeDashoffset = CIRC * (1 - left / (TOTAL_SEC * 1000));
+  if (n !== lastN){
+    const first = lastN === -1; lastN = n;
+    if (n > 0){ $("secs").textContent = n; if (n <= 5) t.classList.add("warn"); if (!first) tone(n <= 5 ? 1250 : 950, n <= 5 ? .09 : .045, n <= 5 ? "square" : "triangle", n <= 5 ? .08 : .05); }
+  }
+  if (left <= 0){ t.classList.remove("warn"); t.classList.add("done"); $("secs").textContent = "سالا الوقت!"; tone(440, .5, "square"); if (mode === "play") timedOut(); return; }
+  raf = requestAnimationFrame(tick);
+}
+function reveal(){ cancelAnimationFrame(raf); $("reveal").classList.add("on"); $("showBtn").hidden = true; $("judge").classList.add("on"); }
+function timedOut(){
+  cancelAnimationFrame(raf);
+  $("reveal").classList.add("on"); $("showBtn").hidden = true; $("judge").classList.remove("on");
+  $("late").hidden = false; $("nextBtn").hidden = false;
+  $("nextBtn").textContent = i + 1 < deck.length ? "السؤال الجاي" : "شوف النتيجة";
+  results.push(false); dots();
+}
+function next(){ i++; if (i < deck.length) load(); else end(); }
+function judge(ok){ tone(ok ? 1046 : 220, ok ? .2 : .3, ok ? "sine" : "square", ok ? .1 : .05); results.push(ok); next(); }
+function end(){
+  cancelAnimationFrame(raf);
+  const s = results.filter(Boolean).length, n = results.length, p = s / n;
+  $("sc").textContent = s; $("tot").textContent = n;
+  $("resLbl").textContent = mode === "host" ? "النتيجة ديال صاحبك" : "النتيجة ديالك";
+  const won = s * 2 >= n, m = $("medal"), need = Math.ceil(n / 2);
+  m.hidden = false; m.classList.toggle("won", won); m.classList.remove("go"); void m.offsetWidth; m.classList.add("go");
+  if (won){
+    $("medalT").textContent = mode === "host" ? "صاحبك ربح الميدالية ديال Abisto!" : "ربحتي الميدالية ديال Abisto!";
+    $("medalS").textContent = mode === "host" ? "عطيه الميدالية ديالو 😄" : "برافو! نتا من الناس اللي كيستاهلوها";
+    confetti(); [523, 659, 784, 1046].forEach((f, k) => setTimeout(() => tone(f, .25, "triangle", .1), k * 110));
+  } else {
+    $("medalT").textContent = "قريب تربح الميدالية!";
+    $("medalS").textContent = "خاصك " + need + " أجوبة صحاح من " + n + ". عاود وجرّب 💪";
+  }
+  $("verdict").textContent = p === 1 ? "ضريف بزاف! جاوبتي على كلشي 🏆" : p >= .7 ? "واعر! قريب تكون بطل 🔥" : p >= .4 ? "ماشي خايب، عاود وتشوف 💪" : "خاصك تتفرج فالفيديوهات مزيان 😄";
+  show("sEnd");
+}
+function confetti(){
+  if (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const box = document.createElement("div"); box.className = "confetti"; box.setAttribute("aria-hidden", "true");
+  const cols = ["#FFD21F", "#F4561C", "#1B3A9A", "#1E9E5A", "#FFFFFF", "#E0262B"];
+  for (let k = 0; k < 60; k++){
+    const p = document.createElement("i");
+    p.style.left = Math.random() * 100 + "%"; p.style.background = cols[k % cols.length];
+    p.style.animationDelay = (Math.random() * .6) + "s"; p.style.animationDuration = (1.8 + Math.random() * 1.4) + "s";
+    p.style.transform = "rotate(" + (Math.random() * 360) + "deg)"; box.appendChild(p);
+  }
+  document.body.appendChild(box); setTimeout(() => box.remove(), 3800);
+}
+function toast(m){ const t = $("toast"); t.textContent = m; t.classList.add("show"); setTimeout(() => t.classList.remove("show"), 2400); }
+async function share(){
+  const s = results.filter(Boolean).length, n = results.length, won = s * 2 >= n;
+  const text = mode === "host"
+    ? "صاحبي جاوب غير على " + s + " من " + n + " ف«سؤال خفيف ضريف مع Abisto» 😂 واش نتا تقدر تجاوب كثر؟"
+    : (won ? "ربحت الميدالية 🏅 ف«سؤال خفيف ضريف مع Abisto»! جاوبت على " + s + " من " + n + " 🔥 واش تقدر تربحها حتى نتا؟"
+           : "جاوبت على " + s + " من " + n + " ف«سؤال خفيف ضريف مع Abisto» 🔥 واش تقدر تغلبني؟");
+  try { if (navigator.share){ await navigator.share({ text, url: GAME_URL }); return; } } catch(e){ if (e && e.name === "AbortError") return; }
+  try { await navigator.clipboard.writeText(text + "\n" + GAME_URL); toast("تنسخات النتيجة ✓ لصقها فالستوري"); } catch(e){ toast(text); }
+}
+let pausedLeft = null;
+function openRestart(){
+  const left = Math.max(0, endAt - performance.now());
+  if (left > 0 && !(mode === "play" && $("reveal").classList.contains("on"))){ cancelAnimationFrame(raf); pausedLeft = left; } else pausedLeft = null;
+  $("sheet").hidden = false; $("yesRestart").focus();
+}
+function closeRestart(){
+  $("sheet").hidden = true;
+  if (pausedLeft !== null){ endAt = performance.now() + pausedLeft; pausedLeft = null; tick(); }
+  $("restartBtn").focus();
+}
+function goHome(){ cancelAnimationFrame(raf); $("sheet").hidden = true; pausedLeft = null; document.body.classList.remove("host"); show("sStart"); }
+
+$("pitchSub").textContent = Math.min(PER_GAME, QUESTIONS.length) + " أسئلة · 15 ثانية لكل سؤال";
+$("modePlay").addEventListener("click", () => { ctx(); start("play"); });
+$("modeHost").addEventListener("click", () => { ctx(); start("host"); });
+$("nextBtn").addEventListener("click", next);
+$("homeBtn").addEventListener("click", goHome);
+$("homeEnd").addEventListener("click", goHome);
+$("showBtn").addEventListener("click", reveal);
+$("okBtn").addEventListener("click", () => judge(true));
+$("noBtn").addEventListener("click", () => judge(false));
+$("againBtn").addEventListener("click", () => start());
+$("shareBtn").addEventListener("click", share);
+$("restartBtn").addEventListener("click", openRestart);
+$("noRestart").addEventListener("click", closeRestart);
+$("yesRestart").addEventListener("click", () => { $("sheet").hidden = true; pausedLeft = null; start(); });
+$("sheet").addEventListener("click", e => { if (e.target === $("sheet")) closeRestart(); });
+document.addEventListener("keydown", e => { if (e.key === "Escape" && !$("sheet").hidden) closeRestart(); });
+paintSound();
+// play offline from the home screen
+if ("serviceWorker" in navigator && /^https?:$/.test(location.protocol)) addEventListener("load", () => navigator.serviceWorker.register("sw.js").catch(() => {}));
+</script>
+</body>
+</html>
