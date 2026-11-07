@@ -2,7 +2,7 @@
 
 Quick, fun questions from Abisto's videos, in Moroccan Darija. 15 seconds a question, 10 questions a game.
 
-**▶ Play: [abisto26.com/sual](https://abisto26.com/sual/)**
+**▶ Play: [abisto26.com/soual](https://abisto26.com/soual/)**
 
 - **أنا اللي غنجاوب**: you answer, then the answer shows.
 - **أنا اللي غنسوّل صحابي**: you ask your friends; only you see the answer.
